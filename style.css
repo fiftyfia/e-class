@@ -1,0 +1,159 @@
+/* style.css */
+
+/* --- RESET & FONT DASAR --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- TABS / NAVIGASI --- */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.tab-button:hover {
+    color: #007bff;
+}
+
+.tab-button.active {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+/* --- KONTEN FITUR --- */
+.content-section {
+    padding: 20px 0;
+}
+
+/* Kelas untuk menyembunyikan/menampilkan konten */
+.hidden {
+    display: none;
+}
+
+/* --- TOMBOL (BUTTONS) --- */
+.primary-btn {
+    background-color: #28a745; /* Hijau */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.primary-btn:hover {
+    background-color: #218838;
+}
+
+/* --- FORMULIR DAN INPUT --- */
+.form-card {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.form-card div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Penting untuk width: 100% */
+}
+
+/* --- TABEL DATA (ABSENSI) --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.data-table th, .data-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+/* --- DAFTAR TUGAS --- */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- HASIL KELOMPOK --- */
+.group-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tata letak responsif */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.group-card {
+    background-color: #e6f7ff; /* Biru muda */
+    border:
