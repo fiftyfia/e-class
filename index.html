@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Kelas Vanilla JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistem Manajemen Kelas Sederhana</h1>
+    </header>
+
+    <main class="container">
+        <nav class="tabs">
+            <button class="tab-button active" onclick="showSection('absensi')">Absensi Siswa 📝</button>
+            <button class="tab-button" onclick="showSection('tugas')">Pencatatan Tugas 📚</button>
+            <button class="tab-button" onclick="showSection('kelompok')">Pengacakan Kelompok 🎲</button>
+        </nav>
+        
+        <section id="absensi" class="content-section active">
+            <h2>Absensi Siswa</h2>
+            <div class="absensi-controls">
+                <label for="tanggalAbsensi">Tanggal:</label>
+                <input type="date" id="tanggalAbsensi" value="" required>
+            </div>
+            
+            <table id="tabelAbsensi" class="data-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>NIS</th>
+                        <th>Nama Siswa</th>
+                        <th>Status Kehadiran</th>
+                    </tr>
+                </thead>
+                <tbody id="listSiswaAbsensi">
+                    <tr>
+                        <td colspan="4">Memuat data siswa...</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button id="simpanAbsensiBtn" class="primary-btn">Simpan Absensi</button>
+        </section>
+
+        <section id="tugas" class="content-section hidden">
+            <h2>Pencatatan Tugas</h2>
+            
+            <form id="formTambahTugas" class="form-card">
+                <h3>Tambah Tugas Baru</h3>
+                <div>
+                    <label for="namaTugas">Nama Tugas:</label>
+                    <input type="text" id="namaTugas" required placeholder="Contoh: Membuat Laporan Ilmiah">
+                </div>
+                <div>
+                    <label for="deadlineTugas">Batas Waktu (Deadline):</label>
+                    <input type="date" id="deadlineTugas" required>
+                </div>
+                <button type="submit" class="primary-btn">Tambah Tugas</button>
+            </form>
+            
+            <h3>Daftar Tugas Aktif</h3>
+            <ul id="daftarTugas" class="task-list">
+                <li>Tidak ada tugas yang tercatat.</li>
+            </ul>
+        </section>
+        
+        <section id="kelompok" class="content-section hidden">
+            <h2>Pengacakan Kelompok</h2>
+            
+            <form id="formAcakKelompok" class="form-card">
+                <h3>Tentukan Pembagian</h3>
+                <label for="jumlahKelompok">Jumlah Kelompok yang Diinginkan:</label>
+                <input type="number" id="jumlahKelompok" min="2" value="4" required>
+                <button type="submit" class="primary-btn">Acak Kelompok Sekarang</button>
+            </form>
+            
+            <h3>Hasil Pembagian Kelompok</h3>
+            <div id="hasilKelompok" class="group-results">
+                <p>Tekan tombol "Acak Kelompok Sekarang" untuk memulai.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 | Dibuat dengan HTML, CSS, dan JavaScript Murni</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
