@@ -72,3 +72,36 @@ function acakKelompok(jumlahKelompok) {
 
     renderKelompok(kelompok);
 }
+// script.js (Bagian Navigasi Tab)
+
+function showSection(sectionId) {
+    // 1. Sembunyikan semua section
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+        section.classList.remove('active');
+    });
+
+    // 2. Tampilkan section yang dipilih
+    const activeSection = document.getElementById(sectionId);
+    if (activeSection) {
+        activeSection.classList.remove('hidden');
+        activeSection.classList.add('active');
+    }
+    
+    // 3. Atur status tombol tab
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Menemukan tombol yang sesuai berdasarkan onclick di HTML
+    const activeButton = document.querySelector(`.tab-button[onclick*="'${sectionId}'"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    // Refresh data atau tampilan saat pindah tab (PENTING)
+    if (sectionId === 'absensi') {
+        renderDaftarSiswaAbsensi(document.getElementById('tanggalAbsensi').value);
+    } else if (sectionId === 'tugas') {
+        renderTugas();
+    }
+}
